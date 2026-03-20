@@ -63,8 +63,24 @@ personal-visual-explainers/
 
 ## 図解を共有する
 
-PDF での共有方法や URL での公開方法は、配布済みの図解ツールと同じです。
-図解ツールの README を参照してください。
+### GitHub Pages（リポジトリの URL で見せる）
+
+`output/` 以下が **GitHub Actions** 経由で Pages にデプロイされます。
+
+1. GitHub でこのリポジトリを開く → **Settings** → **Pages**
+2. **Build and deployment** の **Source** で **GitHub Actions** を選ぶ
+3. `main`（または `master`）に `output/` の HTML を push する
+
+公開後の URL の形（例）:
+
+- トップ: `https://<あなたのユーザー名>.github.io/<リポジトリ名>/`
+- サンプル図解: `https://<あなたのユーザー名>.github.io/<リポジトリ名>/renovation-intro.html`
+
+新しい図解を `output/` に追加したら、同じく push すれば URL からも参照できます。
+
+### その他（Surge など）
+
+PDF での共有や surge.sh への公開は、配布済みの図解ツールと同じです。図解ツールの README を参照してください。
 
 ## 困ったとき
 

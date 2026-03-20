@@ -1,2 +1,2 @@
-output/*.html
+# output/*.html は GitHub Pages 用にコミットする想定のため無視しない
 deploy-history.log
