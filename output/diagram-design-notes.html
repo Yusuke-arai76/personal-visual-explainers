@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta property="og:title" content="お客様向け補助金図解 — 制作の工夫まとめ">
+  <meta property="og:description" content="「お客様が自分で理解・納得できる説明書」にするために設計・改善した7つのポイントを図解します。">
+  <meta property="og:type" content="article">
+  <title>お客様向け補助金図解 — 制作の工夫まとめ</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FFFFFF'/><rect x='8' y='8' width='84' height='84' rx='14' fill='none' stroke='%233B82F6' stroke-width='4'/><circle cx='32' cy='40' r='10' fill='%233B82F6' opacity='0.8'/><circle cx='68' cy='40' r='10' fill='%2360A5FA' opacity='0.8'/><rect x='25' y='62' width='50' height='6' rx='3' fill='%2394A3B8' opacity='0.6'/><rect x='30' y='74' width='40' height='6' rx='3' fill='%2394A3B8' opacity='0.3'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ads: {
+              bg: '#FFFFFF',
+              surface: '#F8FAFC',
+              hover: '#F1F5F9',
+              border: '#E2E8F0',
+              accent: '#3B82F6',
+              'accent-light': '#2563EB',
+              text: '#1E293B',
+              muted: '#64748B',
+              dim: '#94A3B8',
+              positive: '#10B981',
+              negative: '#EF4444',
+              warning: '#F59E0B',
+            }
+          },
+          fontFamily: {
+            sans: ['"Noto Sans JP"', '"Hiragino Sans"', '"Hiragino Kaku Gothic ProN"', '"Yu Gothic UI"', '"Meiryo"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @media print {
+      .no-print { display: none !important; }
+      body { border-top: none !important; }
+      .rounded-xl { break-inside: avoid; }
+      .md\:flex-row { flex-direction: row !important; }
+      .md\:hidden { display: none !important; }
+      .hidden.md\:block { display: block !important; }
+      .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+      .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+      .md\:mb-20 { margin-bottom: 5rem !important; }
+      .md\:py-16 { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+      .bg-clip-text.text-transparent {
+        -webkit-background-clip: initial !important;
+        background-clip: initial !important;
+        color: #2563EB !important;
+        -webkit-text-fill-color: #2563EB !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-ads-bg text-slate-600 antialiased leading-relaxed border-t-4 border-ads-accent">
+  <div class="no-print max-w-3xl mx-auto px-5 pt-2 flex justify-end">
+    <button onclick="window.print()" class="flex items-center gap-1.5 text-xs text-ads-dim hover:text-ads-accent transition-colors cursor-pointer">
+      <i data-lucide="download" class="w-3.5 h-3.5"></i>
+      PDF
+    </button>
+  </div>
+  <main class="max-w-3xl mx-auto px-5 py-10 md:py-16">
+
+<!-- ============================================================ -->
+<!--  HERO                                                        -->
+<!-- ============================================================ -->
+<div class="text-center mb-8 md:mb-10">
+  <div class="inline-flex items-center gap-2 bg-ads-accent/10 text-ads-accent-light px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+    <i data-lucide="pencil-ruler" class="w-4 h-4"></i>
+    図解の制作ノート
+  </div>
+  <h1 class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight mb-5">
+    お客様向け補助金図解<br>制作の工夫まとめ
+  </h1>
+  <p class="text-lg text-ads-muted max-w-xl mx-auto leading-relaxed">
+    「お客様が担当者なしで読んで自分で理解・納得できる」という目標を達成するために ──
+  </p>
+</div>
+
+<!-- ============================================================ -->
+<!--  CORE SUMMARY                                                 -->
+<!-- ============================================================ -->
+<div class="bg-ads-surface border border-ads-border rounded-2xl p-6 md:p-10 mb-8">
+  <div class="text-center mb-8">
+    <p class="text-xl md:text-2xl font-black text-slate-900 mb-2">
+      設計の<span class="text-ads-accent-light">3つの柱</span>
+    </p>
+    <p class="text-sm text-ads-muted">すべての工夫はこの3つのいずれかに収まる</p>
+  </div>
+
+  <div class="flex flex-col md:flex-row items-stretch gap-4">
+    <!-- 柱1 -->
+    <div class="flex-1 rounded-xl border-2 border-blue-200 bg-blue-50/60 p-5 text-center">
+      <div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mx-auto mb-3">
+        <i data-lucide="user" class="w-6 h-6 text-ads-accent"></i>
+      </div>
+      <div class="font-bold text-ads-text mb-1">読者ファースト</div>
+      <p class="text-xs text-ads-muted">補助金ゼロ知識のお客様が「自分のこと」と感じられる設計</p>
+    </div>
+
+    <div class="flex items-center justify-center flex-shrink-0">
+      <i data-lucide="arrow-right" class="w-5 h-5 text-ads-dim hidden md:block"></i>
+      <i data-lucide="arrow-down" class="w-5 h-5 text-ads-dim md:hidden mx-auto my-1"></i>
+    </div>
+
+    <!-- 柱2 -->
+    <div class="flex-1 rounded-xl border-2 border-green-200 bg-green-50/60 p-5 text-center">
+      <div class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center mx-auto mb-3">
+        <i data-lucide="shield-check" class="w-6 h-6 text-green-600"></i>
+      </div>
+      <div class="font-bold text-ads-text mb-1">信頼感の設計</div>
+      <p class="text-xs text-ads-muted">「本当に大丈夫？」という不安を先回りして解消する</p>
+    </div>
+
+    <div class="flex items-center justify-center flex-shrink-0">
+      <i data-lucide="arrow-right" class="w-5 h-5 text-ads-dim hidden md:block"></i>
+      <i data-lucide="arrow-down" class="w-5 h-5 text-ads-dim md:hidden mx-auto my-1"></i>
+    </div>
+
+    <!-- 柱3 -->
+    <div class="flex-1 rounded-xl border-2 border-amber-200 bg-amber-50/60 p-5 text-center">
+      <div class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center mx-auto mb-3">
+        <i data-lucide="phone-call" class="w-6 h-6 text-amber-600"></i>
+      </div>
+      <div class="font-bold text-ads-text mb-1">行動への橋渡し</div>
+      <p class="text-xs text-ads-muted">読み終わった後に「次に何をするか」が自然にわかる</p>
+    </div>
+  </div>
+
+  <p class="text-center text-xs text-ads-dim mt-6">
+    ここから先で、各柱ごとに具体的な工夫を解説します。
+  </p>
+</div>
+
+
+<!-- ============================================================ -->
+<!--  SECTION 1: 読者ファースト                                     -->
+<!-- ============================================================ -->
+<div class="mb-2 mt-10">
+  <div class="flex items-center gap-3 mb-6">
+    <div class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center flex-shrink-0">
+      <i data-lucide="user" class="w-5 h-5 text-ads-accent"></i>
+    </div>
+    <h2 class="text-xl font-bold text-ads-text">柱① 読者ファースト</h2>
+  </div>
+</div>
+
+<!-- 読者設定の明確化 -->
+<div class="rounded-2xl border border-ads-border bg-ads-surface p-6 mb-5">
+  <h3 class="font-bold text-ads-text mb-4 flex items-center gap-2">
+    <i data-lucide="target" class="w-5 h-5 text-ads-accent"></i>
+    読者・ゴールを最初に固定した
+  </h3>
+  <div class="flex flex-col md:flex-row gap-4">
+    <div class="flex-1 rounded-xl border border-blue-100 bg-white p-4">
+      <p class="text-xs font-bold text-ads-accent mb-2">読者</p>
+      <p class="text-sm text-ads-text font-bold">補助金の知識がゼロの一般のお客様</p>
+      <p class="text-xs text-ads-muted mt-1">リフォームには興味があるが制度は知らない。行政の手続きが苦手で慎重</p>
+    </div>
+    <div class="flex items-center justify-center flex-shrink-0 text-ads-dim">
+      <i data-lucide="arrow-right" class="w-5 h-5 hidden md:block"></i>
+      <i data-lucide="arrow-down" class="w-5 h-5 md:hidden mx-auto my-1"></i>
+    </div>
+    <div class="flex-1 rounded-xl border border-green-100 bg-white p-4">
+      <p class="text-xs font-bold text-green-600 mb-2">成功の定義</p>
+      <p class="text-sm text-ads-text font-bold">読んで自分で理解・納得できる状態</p>
+      <p class="text-xs text-ads-muted mt-1">担当者がいなくても読める。手元に置いて後で見返せる</p>
+    </div>
+  </div>
+</div>
+
+<!-- 情報の絞り込み -->
+<div class="rounded-2xl border border-ads-border bg-ads-surface p-6 mb-5">
+  <h3 class="font-bold text-ads-text mb-4 flex items-center gap-2">
+    <i data-lucide="filter" class="w-5 h-5 text-ads-accent"></i>
+    「まず3つだけ」で情報を絞った
+  </h3>
+  <p class="text-sm text-ads-muted mb-4">お客様は情報過多になるとすぐ読むのをやめる。最初に骨格だけを伝え、後から肉付けする構成にした。</p>
+  <div class="grid md:grid-cols-3 gap-3">
+    <div class="rounded-xl border border-ads-border bg-white p-4 text-center">
+      <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-2">
+        <span class="text-xs font-black text-ads-accent">1</span>
+      </div>
+      <p class="text-sm font-bold text-ads-text">対象の工事</p>
+      <p class="text-xs text-ads-muted mt-1">何をすれば対象になるか</p>
+    </div>
+    <div class="rounded-xl border border-ads-border bg-white p-4 text-center">
+      <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-2">
+        <span class="text-xs font-black text-ads-accent">2</span>
+      </div>
+      <p class="text-sm font-bold text-ads-text">最大100万円</p>
+      <p class="text-xs text-ads-muted mt-1">いくら戻るか</p>
+    </div>
+    <div class="rounded-xl border border-ads-border bg-white p-4 text-center">
+      <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-2">
+        <span class="text-xs font-black text-ads-accent">3</span>
+      </div>
+      <p class="text-sm font-bold text-ads-text">手続きはお任せ</p>
+      <p class="text-xs text-ads-muted mt-1">お客様は何もしなくていい</p>
+    </div>
+  </div>
+</div>
+
+<!-- 行政語→お客様語 変換 -->
+<div class="rounded-2xl border border-ads-border bg-ads-surface p-6 mb-10">
+  <h3 class="font-bold text-ads-text mb-4 flex items-center gap-2">
+    <i data-lucide="languages" class="w-5 h-5 text-ads-accent"></i>
+    行政語をすべてお客様語に置き換えた
+  </h3>
+  <p class="text-sm text-ads-muted mb-4">制度の文章に出てくる言葉をそのまま使うと、読者が止まる。全語を変換するルールを作った。</p>
+  <div class="space-y-2">
+    <div class="flex items-center gap-3 bg-white rounded-xl border border-ads-border p-3">
+      <span class="text-sm text-red-500 font-bold line-through w-28 flex-shrink-0">申請</span>
+      <i data-lucide="arrow-right" class="w-4 h-4 text-ads-dim flex-shrink-0"></i>
+      <span class="text-sm font-bold text-ads-positive">手続き・申し込み</span>
+    </div>
+    <div class="flex items-center gap-3 bg-white rounded-xl border border-ads-border p-3">
+      <span class="text-sm text-red-500 font-bold line-through w-28 flex-shrink-0">交付</span>
+      <i data-lucide="arrow-right" class="w-4 h-4 text-ads-dim flex-shrink-0"></i>
+      <span class="text-sm font-bold text-ads-positive">もらう・受け取る</span>
+    </div>
+    <div class="flex items-center gap-3 bg-white rounded-xl border border-ads-border p-3">
+      <span class="text-sm text-red-500 font-bold line-through w-28 flex-shrink-0">実績報告</span>
+      <i data-lucide="arrow-right" class="w-4 h-4 text-ads-dim flex-shrink-0"></i>
+      <span class="text-sm font-bold text-ads-positive">工事完了の報告</span>
+    </div>
+    <div class="flex items-center gap-3 bg-white rounded-xl border border-ads-border p-3">
+      <span class="text-sm text-red-500 font-bold line-through w-28 flex-shrink-0">補助率</span>
+      <i data-lucide="arrow-right" class="w-4 h-4 text-ads-dim flex-shrink-0"></i>
+      <span class="text-sm font-bold text-ads-positive">工事費のうち何%か</span>
+    </div>
+    <div class="flex items-center gap-3 bg-white rounded-xl border border-ads-border p-3">
+      <span class="text-sm text-red-500 font-bold line-through w-28 flex-shrink-0">性能基準</span>
+      <i data-lucide="arrow-right" class="w-4 h-4 text-ads-dim flex-shrink-0"></i>
+      <span class="text-sm font-bold text-ads-positive">補助を受けるために必要な窓の性能</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================ -->
+<!--  SECTION 2: 信頼感の設計                                       -->
+<!-- ============================================================ -->
+<div class="mb-2">
+  <div class="flex items-center gap-3 mb-6">
+    <div class="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center flex-shrink-0">
+      <i data-lucide="shield-check" class="w-5 h-5 text-green-600"></i>
+    </div>
+    <h2 class="text-xl font-bold text-ads-text">柱② 信頼感の設計</h2>
+  </div>
+</div>
+
+<!-- FAQ先置き -->
+<div class="rounded-2xl border border-ads-border bg-ads-surface p-6 mb-5">
+  <h3 class="font-bold text-ads-text mb-4 flex items-center gap-2">
+    <i data-lucide="help-circle" class="w-5 h-5 text-green-600"></i>
+    「怪しくない？」をFAQで先回り解消した
+  </h3>
+  <div class="grid md:grid-cols-2 gap-3">
+    <div class="rounded-xl border border-green-100 bg-white p-4">
+      <p class="text-xs font-bold text-ads-muted mb-2">お客様の心の声</p>
+      <p class="text-sm font-bold text-ads-text">「本当に国の制度？詐欺じゃないの？」</p>
+      <div class="mt-3 pt-3 border-t border-ads-border">
+        <p class="text-xs text-ads-muted">FAQ の回答</p>
+        <p class="text-xs text-ads-text mt-1">「環境省が実施する公式の国の事業です」+公式URL付きで提示</p>
+      </div>
+    </div>
+    <div class="rounded-xl border border-green-100 bg-white p-4">
+      <p class="text-xs font-bold text-ads-muted mb-2">お客様の心の声</p>
+      <p class="text-sm font-bold text-ads-text">「手続きは難しそう…自分でできない」</p>
+      <div class="mt-3 pt-3 border-t border-ads-border">
+        <p class="text-xs text-ads-muted">FAQ の回答</p>
+        <p class="text-xs text-ads-text mt-1">「国への手続きは担当業者が代行します。お客様が役所に行く必要はありません」</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 一次情報と具体的数字 -->
+<div class="rounded-2xl border border-ads-border bg-ads-surface p-6 mb-5">
+  <h3 class="font-bold text-ads-text mb-4 flex items-center gap-2">
+    <i data-lucide="external-link" class="w-5 h-5 text-green-600"></i>
+    一次情報と具体的な金額で裏付けた
+  </h3>
+  <div class="grid md:grid-cols-2 gap-3">
+    <div class="rounded-xl border border-ads-border bg-white p-4">
+      <div class="flex items-center gap-2 mb-2">
+        <i data-lucide="link" class="w-4 h-4 text-ads-accent"></i>
+        <p class="text-sm font-bold text-ads-text">公式URLを明記</p>
+      </div>
+      <p class="text-xs text-ads-muted leading-relaxed">環境省・東京都環境局の公式URLを記載。「このページで確認できます」とお客様が自分で検証できる状態にした</p>
+    </div>
+    <div class="rounded-xl border border-ads-border bg-white p-4">
+      <div class="flex items-center gap-2 mb-2">
+        <i data-lucide="calculator" class="w-4 h-4 text-ads-accent"></i>
+        <p class="text-sm font-bold text-ads-text">計算例で「いくら得か」を可視化</p>
+      </div>
+      <p class="text-xs text-ads-muted leading-relaxed">「工事費30万円 → 補助9万円 → 実質21万円」のように、抽象的な%を具体的な金額に翻訳して見せた</p>
+    </div>
+  </div>
+</div>
+
+<!-- 誤解の先回り -->
+<div class="rounded-2xl border border-ads-border bg-ads-surface p-6 mb-10">
+  <h3 class="font-bold text-ads-text mb-4 flex items-center gap-2">
+    <i data-lucide="alert-circle" class="w-5 h-5 text-green-600"></i>
+    名前からくる誤解を先に打ち消した
+  </h3>
+  <div class="flex flex-col md:flex-row items-start gap-4">
+    <div class="flex-1 rounded-xl border border-red-100 bg-red-50/60 p-4">
+      <p class="text-xs font-bold text-red-500 mb-2">「先進的窓リノベ」という名前から</p>
+      <p class="text-sm font-bold text-ads-text">「先進的な家しか対象外では？古い家はダメ？」</p>
+      <p class="text-xs text-ads-muted mt-2">という誤解が生まれる</p>
+    </div>
+    <div class="flex items-center justify-center flex-shrink-0 text-ads-dim">
+      <i data-lucide="arrow-right" class="w-5 h-5 hidden md:block"></i>
+      <i data-lucide="arrow-down" class="w-5 h-5 md:hidden mx-auto my-1"></i>
+    </div>
+    <div class="flex-1 rounded-xl border border-green-100 bg-green-50/60 p-4">
+      <p class="text-xs font-bold text-green-600 mb-2">制度説明ボックスで即解消</p>
+      <p class="text-sm font-bold text-ads-text">「名前に『先進的』とありますが、築年数の古い住宅でも対象になるのが特徴です」と一文で追記した</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================ -->
+<!--  SECTION 3: 行動への橋渡し                                     -->
+<!-- ============================================================ -->
+<div class="mb-2">
+  <div class="flex items-center gap-3 mb-6">
+    <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center flex-shrink-0">
+      <i data-lucide="phone-call" class="w-5 h-5 text-amber-600"></i>
+    </div>
+    <h2 class="text-xl font-bold text-ads-text">柱③ 行動への橋渡し</h2>
+  </div>
+</div>
+
+<div class="rounded-2xl border border-ads-border bg-ads-surface p-6 mb-10">
+  <h3 class="font-bold text-ads-text mb-5 flex items-center gap-2">
+    <i data-lucide="map" class="w-5 h-5 text-amber-600"></i>
+    読後に「次の一歩」が迷わずわかる設計
+  </h3>
+  <div class="space-y-4">
+    <div class="flex items-start gap-4 bg-white rounded-xl border border-ads-border p-4">
+      <div class="w-9 h-9 rounded-lg bg-amber-50 border border-amber-200 flex items-center justify-center flex-shrink-0">
+        <i data-lucide="list-checks" class="w-5 h-5 text-amber-600"></i>
+      </div>
+      <div>
+        <p class="text-sm font-bold text-ads-text">チェックリストで「自分が対象かどうか」を自己判断</p>
+        <p class="text-xs text-ads-muted mt-1">お客様が一番知りたいのは「うちの家は対象になる？」。チェックボックスで自分でチェックできる形にした</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-4 bg-white rounded-xl border border-ads-border p-4">
+      <div class="w-9 h-9 rounded-lg bg-amber-50 border border-amber-200 flex items-center justify-center flex-shrink-0">
+        <i data-lucide="git-branch" class="w-5 h-5 text-amber-600"></i>
+      </div>
+      <div>
+        <p class="text-sm font-bold text-ads-text">4ステップのフロー図で手続きを視覚化</p>
+        <p class="text-xs text-ads-muted mt-1">「相談→契約→工事→補助金受け取り」の4ステップ。ステップ4だけ緑色にして「ここでお金が戻る」というゴールを見せた</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-4 bg-white rounded-xl border border-ads-border p-4">
+      <div class="w-9 h-9 rounded-lg bg-amber-50 border border-amber-200 flex items-center justify-center flex-shrink-0">
+        <i data-lucide="building-2" class="w-5 h-5 text-amber-600"></i>
+      </div>
+      <div>
+        <p class="text-sm font-bold text-ads-text">連絡先プレースホルダーをクロージングに設置</p>
+        <p class="text-xs text-ads-muted mt-1">「まず聞くだけでもOK」という安心感のある一文とセットで、会社名・電話番号を記入する欄を用意。担当者が埋めてお客様に渡せる形</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================ -->
+<!--  SECTION 4: AIレビューで発見した問題                            -->
+<!-- ============================================================ -->
+<div class="flex items-center gap-3 mb-6">
+  <div class="w-10 h-10 rounded-xl bg-purple-100 flex items-center justify-center flex-shrink-0">
+    <i data-lucide="bot" class="w-5 h-5 text-purple-600"></i>
+  </div>
+  <h2 class="text-xl font-bold text-ads-text">AIレビューで発見・修正した問題</h2>
+</div>
+
+<div class="rounded-2xl border border-ads-border bg-ads-surface p-6 mb-4">
+  <p class="text-sm text-ads-muted mb-5">
+    初稿完成後、「補助金を全く知らない50代の専業主婦」の視点でAIにレビューさせた。
+    3つの致命的問題が見つかり、すべて修正した。
+  </p>
+
+  <!-- 問題1 -->
+  <div class="mb-4">
+    <div class="flex items-center gap-2 mb-3">
+      <span class="px-2 py-0.5 rounded text-xs font-bold bg-red-100 text-red-600">致命的 1</span>
+      <span class="text-sm font-bold text-ads-text">連絡先がどこにもなかった</span>
+    </div>
+    <div class="grid md:grid-cols-2 gap-3">
+      <div class="rounded-xl border border-red-100 bg-red-50/60 p-4">
+        <p class="text-xs font-bold text-red-500 mb-1">修正前</p>
+        <p class="text-sm text-ads-text">「お気軽にご相談ください」という締め言葉があったが、その「誰に」が書かれていなかった。読者がどこに連絡すればいいかわからない</p>
+      </div>
+      <div class="rounded-xl border border-green-100 bg-green-50/60 p-4">
+        <p class="text-xs font-bold text-green-600 mb-1">修正後</p>
+        <p class="text-sm text-ads-text">クロージングに会社名・電話番号・営業時間のプレースホルダーを追加。担当者が記入してお客様に渡せる形にした</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 問題2 -->
+  <div class="mb-4">
+    <div class="flex items-center gap-2 mb-3">
+      <span class="px-2 py-0.5 rounded text-xs font-bold bg-red-100 text-red-600">致命的 2</span>
+      <span class="text-sm font-bold text-ads-text">フッターに「AI-Driven School の図解ツールで作成」と記載されていた</span>
+    </div>
+    <div class="grid md:grid-cols-2 gap-3">
+      <div class="rounded-xl border border-red-100 bg-red-50/60 p-4">
+        <p class="text-xs font-bold text-red-500 mb-1">修正前</p>
+        <p class="text-sm text-ads-text">お客様に渡す資料の一番下に「AIスクールのツールで作成」と書かれていた。「これってAIが勝手に作ったの？」と信頼を損なう</p>
+      </div>
+      <div class="rounded-xl border border-green-100 bg-green-50/60 p-4">
+        <p class="text-xs font-bold text-green-600 mb-1">修正後</p>
+        <p class="text-sm text-ads-text">「この説明書の情報は2026年4月時点のものです。最新情報は公式サイトまたは担当者にご確認ください」に変更</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 問題3 -->
+  <div>
+    <div class="flex items-center gap-2 mb-3">
+      <span class="px-2 py-0.5 rounded text-xs font-bold bg-red-100 text-red-600">致命的 3</span>
+      <span class="text-sm font-bold text-ads-text">補助金欄の「▲」が「危険サイン」に見えた</span>
+    </div>
+    <div class="grid md:grid-cols-2 gap-3">
+      <div class="rounded-xl border border-red-100 bg-red-50/60 p-4">
+        <p class="text-xs font-bold text-red-500 mb-1">修正前</p>
+        <p class="text-sm text-ads-text">計算例で補助金を「▲ 90,000円」と表記。会計では「マイナス」の意味だが、一般の方には「赤い警告三角」に見えてしまう</p>
+      </div>
+      <div class="rounded-xl border border-green-100 bg-green-50/60 p-4">
+        <p class="text-xs font-bold text-green-600 mb-1">修正後</p>
+        <p class="text-sm text-ads-text">「− 90,000円（割引）」に変更。「補助金（割引・目安）」という項目名も付けて、プラスに働く値引きであることを明示した</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p class="text-xs text-ads-dim text-center mb-10">
+  このレビューにより初稿から★2 → ★4相当に品質が向上した（AIによる5段階評価）
+</p>
+
+
+<!-- ============================================================ -->
+<!--  SUMMARY: 構成要素の全体像                                     -->
+<!-- ============================================================ -->
+<div class="flex items-center gap-3 mb-6">
+  <div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center flex-shrink-0">
+    <i data-lucide="layout-list" class="w-5 h-5 text-ads-muted"></i>
+  </div>
+  <h2 class="text-xl font-bold text-ads-text">完成した図解の構成</h2>
+</div>
+
+<div class="rounded-2xl border border-ads-border bg-ads-surface p-6 mb-4">
+  <p class="text-sm text-ads-muted mb-5">各セクションがどの「柱」を担っているかを整理すると下記のとおり。</p>
+  <div class="space-y-2">
+    <div class="flex items-start gap-3 bg-white rounded-xl border border-ads-border p-3">
+      <span class="text-xs font-black text-ads-accent mt-0.5 w-4 flex-shrink-0">1</span>
+      <div class="flex-1">
+        <p class="text-sm font-bold text-ads-text">リードコピー</p>
+        <p class="text-xs text-ads-muted">「誰向けか」「難しくない」「手続きは担当者が」を最初の2行で伝える</p>
+      </div>
+      <span class="text-xs px-2 py-0.5 rounded bg-blue-50 text-ads-accent font-medium flex-shrink-0">読者</span>
+    </div>
+    <div class="flex items-start gap-3 bg-white rounded-xl border border-ads-border p-3">
+      <span class="text-xs font-black text-ads-accent mt-0.5 w-4 flex-shrink-0">2</span>
+      <div class="flex-1">
+        <p class="text-sm font-bold text-ads-text">制度の解説ボックス</p>
+        <p class="text-xs text-ads-muted">正式名称を一度だけ書き「古い家も対象」の誤解を即解消</p>
+      </div>
+      <span class="text-xs px-2 py-0.5 rounded bg-green-50 text-green-600 font-medium flex-shrink-0">信頼</span>
+    </div>
+    <div class="flex items-start gap-3 bg-white rounded-xl border border-ads-border p-3">
+      <span class="text-xs font-black text-ads-accent mt-0.5 w-4 flex-shrink-0">3</span>
+      <div class="flex-1">
+        <p class="text-sm font-bold text-ads-text">まず3つだけ</p>
+        <p class="text-xs text-ads-muted">骨格だけを先に見せる。ここを読めば全体像がわかる</p>
+      </div>
+      <span class="text-xs px-2 py-0.5 rounded bg-blue-50 text-ads-accent font-medium flex-shrink-0">読者</span>
+    </div>
+    <div class="flex items-start gap-3 bg-white rounded-xl border border-ads-border p-3">
+      <span class="text-xs font-black text-ads-accent mt-0.5 w-4 flex-shrink-0">4</span>
+      <div class="flex-1">
+        <p class="text-sm font-bold text-ads-text">わが家は対象？チェックリスト</p>
+        <p class="text-xs text-ads-muted">「自分のこと」として読めるよう、自己判断できる形式に</p>
+      </div>
+      <span class="text-xs px-2 py-0.5 rounded bg-amber-50 text-amber-600 font-medium flex-shrink-0">行動</span>
+    </div>
+    <div class="flex items-start gap-3 bg-white rounded-xl border border-ads-border p-3">
+      <span class="text-xs font-black text-ads-accent mt-0.5 w-4 flex-shrink-0">5</span>
+      <div class="flex-1">
+        <p class="text-sm font-bold text-ads-text">手続きの流れ（4ステップ）</p>
+        <p class="text-xs text-ads-muted">「先にお金が要らない」「役所に行かなくていい」をフローで自明にした</p>
+      </div>
+      <span class="text-xs px-2 py-0.5 rounded bg-amber-50 text-amber-600 font-medium flex-shrink-0">行動</span>
+    </div>
+    <div class="flex items-start gap-3 bg-white rounded-xl border border-ads-border p-3">
+      <span class="text-xs font-black text-ads-accent mt-0.5 w-4 flex-shrink-0">6</span>
+      <div class="flex-1">
+        <p class="text-sm font-bold text-ads-text">計算例</p>
+        <p class="text-xs text-ads-muted">「最大100万円」の根拠と具体的な金額感を2パターンで提示</p>
+      </div>
+      <span class="text-xs px-2 py-0.5 rounded bg-green-50 text-green-600 font-medium flex-shrink-0">信頼</span>
+    </div>
+    <div class="flex items-start gap-3 bg-white rounded-xl border border-ads-border p-3">
+      <span class="text-xs font-black text-ads-accent mt-0.5 w-4 flex-shrink-0">7</span>
+      <div class="flex-1">
+        <p class="text-sm font-bold text-ads-text">FAQ（5問）</p>
+        <p class="text-xs text-ads-muted">「怪しくない？」「手続きが難しい？」「現金で届く？」などを先回りで解消</p>
+      </div>
+      <span class="text-xs px-2 py-0.5 rounded bg-green-50 text-green-600 font-medium flex-shrink-0">信頼</span>
+    </div>
+    <div class="flex items-start gap-3 bg-white rounded-xl border border-ads-border p-3">
+      <span class="text-xs font-black text-ads-accent mt-0.5 w-4 flex-shrink-0">8</span>
+      <div class="flex-1">
+        <p class="text-sm font-bold text-ads-text">出典・確認先</p>
+        <p class="text-xs text-ads-muted">環境省・東京都の公式URLと「〇年〇月時点」の日付を明記</p>
+      </div>
+      <span class="text-xs px-2 py-0.5 rounded bg-green-50 text-green-600 font-medium flex-shrink-0">信頼</span>
+    </div>
+    <div class="flex items-start gap-3 bg-white rounded-xl border border-ads-border p-3">
+      <span class="text-xs font-black text-ads-accent mt-0.5 w-4 flex-shrink-0">9</span>
+      <div class="flex-1">
+        <p class="text-sm font-bold text-ads-text">クロージング＋連絡先</p>
+        <p class="text-xs text-ads-muted">「聞くだけでOK」の一文と会社情報のプレースホルダーで次の行動を促す</p>
+      </div>
+      <span class="text-xs px-2 py-0.5 rounded bg-amber-50 text-amber-600 font-medium flex-shrink-0">行動</span>
+    </div>
+  </div>
+</div>
+
+  </main>
+  <footer class="max-w-3xl mx-auto px-5 pb-10 pt-6 border-t border-ads-border/30">
+    <p class="text-xs text-ads-dim text-center">AI-Driven School の図解ツールで作成</p>
+  </footer>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
